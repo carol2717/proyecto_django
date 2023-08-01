@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+
+
+{% block contenido %}
+
+    <h3>Busca un curso:</h3>
+
+    <form action="/buscar" method="GET">
+
+        <input type="text" name="buscar_curso">
+
+        <input type="submit" value="Buscar">
+
+
+
+
+    </form>
+    
+    <div>
+        <h1>Cursos</h1>
+    </div>
+
+    {% for curso in cursos %}
+        <div>
+            <h2><a href="">{{ curso.titulo }}</a></h2>
+            <p>{{ curso.descripcion |linebreaksbr }}</p>
+        </div>
+    </br>
+    {% endfor %}
+
+{% endblock %}
